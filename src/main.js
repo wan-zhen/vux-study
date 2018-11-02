@@ -6,7 +6,13 @@ import router from "./router";
 // 直接在組件 import 是可以直接用 vux 的
 import XButton from "vux/src/components/x-button/index.vue";
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 Vue.component("XButton", XButton);
+library.add(faCoffee);
+Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.config.productionTip = false;
 new Vue({
