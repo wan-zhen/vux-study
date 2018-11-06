@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <x-button type="primary">primary</x-button>
     <x-button type="warn">Delete</x-button>
