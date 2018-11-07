@@ -1,29 +1,23 @@
 <template>
   <div id="app">
-   
-      <drawer
-        width="200px;"
-        :show.sync="drawerVisibility">
-        
-        <x-button type="primary" @click.native="changeDrawerVisibility">{{drawerVisibility}}</x-button>
-      <div slot="drawer">
-        <router-link to="/">Home</router-link>
-        <br>
-        <router-link to="/about">About</router-link>
-      </div>
+      <drawer :show.sync="drawerVisibility" placement="right">
+        <!-- 侧边栏内容插槽 -->
+        <div slot="drawer" class="side">
+          <x-button type="primary" @click.native="changeDrawerVisibility">{{drawerVisibility}}</x-button>
+        </div>
 
-      <!-- rourer-view 作为默认插槽内容 -->
-      <div>
-        <router-view></router-view>
-      </div>
+        <!-- 主体内容插槽 -->
+        <div slot="default">
+          <router-link to="/">Home</router-link> | <router-link to="/about">About</router-link>
+          <x-button type="primary" @click.native="changeDrawerVisibility">{{drawerVisibility}}</x-button>
+        </div>
+
+        <!-- rourer-view 作为默认插槽内容 -->
+        <div>
+          <router-view></router-view>
+        </div>
 
       </drawer>
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-       <router-link to="/drawer">drawer</router-link>
-    </div>
-    <router-view/> -->
   </div>
 </template>
 
@@ -60,5 +54,9 @@ html,
 body,
 #app {
   height: 100%;
+  overflow-x: hidden;
+}
+.vux-drawer > div {
+  width: 100%;
 }
 </style>
