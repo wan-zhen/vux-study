@@ -2,9 +2,6 @@ const vuxLoader = require("vux-loader");
 
 module.exports = {
   baseUrl: './',
-  // build: {
-  //   assetsPublicPath: './'
-  // },
   configureWebpack: config => {
     vuxLoader.merge(config, {
       plugins: [{
